@@ -1,2 +1,3 @@
-Padrão Singleton - Banco Central
-Padrão Inicialização Tardia - Banco Central
+Pontos para estudo nesta unidade: 
+- Padrão Singleton - Classe: BancoCentral
+- Padrão Inicialização Tardia - BancoCentral

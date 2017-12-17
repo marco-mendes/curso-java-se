@@ -59,8 +59,7 @@ public class Agencia<T extends Cliente> {
 	}
 	 
 	public void ordenaClientesPorSaldo() {
-		// Sort utiliza o padrao de desenho GoT Strategy, i.e, podemos variar dinamicamente a estrategia de ordenacao
-		Collections.sort(this.clientes, new ComparatorSaldo());
+	  Collections.sort(this.clientes, new ComparatorSaldo());
 	}
 	
 	public String toString() {
@@ -109,3 +108,5 @@ class ComparatorSaldo implements Comparator<Cliente> {
 	}
 
 }
+
+

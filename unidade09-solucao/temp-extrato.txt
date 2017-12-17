@@ -1,0 +1,6 @@
+Extrato da conta:
+Codigo: 12345-6
+ 2017-12-17T17:59:25.536-02:00[America/Sao_Paulo] CREDITO 1500.0
+ 2017-12-17T17:59:25.539-02:00[America/Sao_Paulo] DEBITO 500.0
+ 2017-12-17T17:59:25.539-02:00[America/Sao_Paulo] DEBITO 2000.0
+ Saldo: -1000.0
