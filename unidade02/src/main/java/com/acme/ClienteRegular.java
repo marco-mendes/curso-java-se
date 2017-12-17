@@ -7,14 +7,14 @@ package com.acme;
  * @author Marco Mendes
  * @since 2017
  * 
- * Pontos para análise
+ * Pontos para anï¿½lise
  * - Uso do super
  * - Sobrescrita (override)
  * - Sobrecarga (overload)
  * - Composicao de objetos
- * - Reuso por delegação
- * - Reuso por herança
- * - Programacao por contrato (ou funciona ou retorna uma exceção)
+ * - Reuso por delegaï¿½ï¿½o
+ * - Reuso por heranï¿½a
+ * - Programacao por contrato (ou funciona ou retorna uma exceï¿½ï¿½o)
  * 
  */
 public class ClienteRegular extends Cliente {
@@ -22,11 +22,10 @@ public class ClienteRegular extends Cliente {
     private ContaCorrente conta; 
 	
 	public ClienteRegular(String nome, String endereco) {
-		super(nome, endereco);
-		conta  = new ContaCorrente(0.0, 0.0);
+        this(nome, endereco, 0);
 	}
 	
-	// Overload - Sobrecarga do método construtor (nao confundir com override!)
+	// Overload - Sobrecarga do metodo construtor (nao confundir com override!)
 	public ClienteRegular(String nome, String endereco, double saldo) {
 		super(nome, endereco);
 		conta  = new ContaCorrente(saldo, 0.0);
@@ -39,11 +38,11 @@ public class ClienteRegular extends Cliente {
 	}
 	
 	public void creditar(double valor) throws MovimentacaoInvalida {
-		conta.creditar(valor); // Reuso por delegação
+		conta.creditar(valor); // Reuso por delegaï¿½ï¿½o
 	}
 	
 	public void debitar(double valor) throws MovimentacaoInvalida, LimiteSaqueExcedido, LimiteChequeEspecialExcedido {
-		conta.debitar(valor); // Reuso por delegação
+		conta.debitar(valor); // Reuso por delegaï¿½ï¿½o
 	}
 	
 	public static void main(String[] args) throws MovimentacaoInvalida, LimiteSaqueExcedido, LimiteChequeEspecialExcedido {

@@ -1,16 +1,16 @@
 package com.acme;
 
 /**
- * Classe cliente com construções mínimas em Java
+ * Classe cliente com construÃ§Ãµes mÃ­nimas em Java
  * @author Marco Mendes
  * @since Dezembro de 2017
  *
- * Pontos de análise
- * - Definição de classes
- * - Definição de atributos
+ * Pontos de anÃ¡lise
+ * - DefiniÃ§Ã£o de classes
+ * - DefiniÃ§Ã£o de atributos
  * - Construtores
- * - Sobrescrita de métodos
- * - Criação de objetos
+ * - Sobrescrita de mÃ©todos
+ * - CriaÃ§Ã£o de objetos
  *
  */
 public class Cliente {

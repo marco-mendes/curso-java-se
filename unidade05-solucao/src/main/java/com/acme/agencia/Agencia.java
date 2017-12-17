@@ -8,7 +8,6 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import com.acme.cliente.Cliente;
-import com.acme.cliente.ClienteRegular;
 import com.acme.cliente.ClienteVIP;
 import com.acme.excecoes.ContaInexistente;
 import com.acme.excecoes.ContaInvalida;
@@ -54,8 +53,10 @@ public class Agencia<T extends Cliente> {
 	public void ordenaClientesPorNome() {
 		Collections.sort(this.clientes);
 	}
-
+	
+	 
 	public void ordenaClientesPorSaldo() {
+		// Sort utiliza o padrao de desenho GoT Strategy, i.e, podemos variar dinamicamente a estrategia de ordenacao
 		Collections.sort(this.clientes, new ComparatorSaldo());
 	}
 	

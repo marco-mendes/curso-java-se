@@ -3,18 +3,22 @@ package com.acme;
 import java.time.ZonedDateTime;
 
 /**
- * Classe conta corrente com construções básica em Java
+ * Classe conta corrente com construï¿½ï¿½es bï¿½sica em Java
  * 
  * @author Marco Mendes
  * @since 2017
  * 
- *  Pontos para análise: 
+ *  Pontos para anï¿½lise: 
  *  - Uso de enums 
- *  - Uso de exceções para tratamento de erros - Fatoração de regras em métodos privativos
+ *  - Uso de exceï¿½ï¿½es para tratamento de erros - Fatoraï¿½ï¿½o de regras em mï¿½todos privativos
  * 
  */
 public class ContaCorrente {
 
+	/**
+	 * 
+	 */
+	private static final int LIMITE_HORARIO_NOTURNO = 22;
 	private double saldo;
 	private double limiteCredito;
 	private StatusConta status;
@@ -25,6 +29,7 @@ public class ContaCorrente {
 		this.limiteCredito = limiteCredito;
 		this.status = StatusConta.ATIVA;
 	}
+
 
 	public double getSaldo() {
 		return saldo;
@@ -64,7 +69,7 @@ public class ContaCorrente {
 	private void verificaHorarioSaque(double valor, ZonedDateTime horaAgora)
 			throws  LimiteSaqueExcedido {
 
-		if (valor > 100 && (horaAgora.getHour() >= 22 || horaAgora.getHour() <= 6)) {
+		if (valor > 100 && (horaAgora.getHour() >= LIMITE_HORARIO_NOTURNO || horaAgora.getHour() <= 6)) {
 			throw new LimiteSaqueExcedido();
 		}
 	}

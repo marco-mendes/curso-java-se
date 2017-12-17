@@ -20,7 +20,7 @@ public class TransferidorDinheiro {
 	
 	private TransferidorDinheiro() {}
 	
-    static void transferir(IConta origem, IConta destino, double valor) 
+    public static void transferir(IConta origem, IConta destino, double valor) 
     		throws MovimentacaoInvalida, LimiteSaqueExcedido, LimiteChequeEspecialExcedido {
     	     origem.debitar(valor);
     	     destino.creditar(valor);

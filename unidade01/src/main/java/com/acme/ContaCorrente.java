@@ -1,11 +1,11 @@
 package com.acme;
 
 /**
- * Classe conta corrente com construções básica em Java
+ * Classe conta corrente com construcoes basicas em Java
  * @author Marco Mendes
  * @since 2017
  * 
- * Pontos para análise:
+ * Pontos para analise:
  *  - Uso de enums
  * 
  */
