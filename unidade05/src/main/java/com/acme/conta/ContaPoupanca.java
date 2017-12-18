@@ -8,19 +8,6 @@ import com.acme.excecoes.LimiteSaqueExcedido;
 import com.acme.excecoes.MovimentacaoInvalida;
 import com.acme.util.Utils;
 
-/**
- * Classe conta corrente com construções básica em Java
- * 
- * @author Marco Mendes
- * @since 2017
- * 
- *        Pontos para análise: 
- *        - Uso de enums - Uso de exceções para tratamento de  erros 
- *        - Fatoração de regras em métodos privativos
- *        - Interfaces fluentes (String Buffer)
- *        - Exceções no construtor da classe
- * 
- */
 public class ContaPoupanca implements IConta {
 
 	private String codigo;

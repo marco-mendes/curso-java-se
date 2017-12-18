@@ -1,20 +1,5 @@
 package com.acme.cliente;
 
-/**
- * Classe cliente com construções mínimas em Java
- * @author Marco Mendes
- * @since Dezembro de 2017
- *
- * Pontos de análise
- * - Definição de classes
- * - Definição de atributos
- * - Construtores
- * - Sobrescrita de métodos
- * - Criação de objetos
- * - Classe abstrata
- * - Tipos genéricos
- *
- */
 public abstract class Cliente  {
    
 	private String nome;

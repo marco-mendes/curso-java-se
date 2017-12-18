@@ -1,16 +1,16 @@
-Código base para uso: amostra.unidade03
+Codigo base para uso: amostra.unidade03
 
 **Crie uma nova classe (AgenciaBancaria)**
 
  
- ** Regras de negócio**
+ ** Regras de negocio**
   - AgenciaBancaria deve conter uma colecao de clientes
   - Deve haver um metodo para totalizar o volume financeiro mantido por uma agencia
   - Use tipos genericos
 
-  - Código limpo
+  - Codigo limpo
   
-** Crie testes com o uso do método Main ** 
+** Crie testes com o uso do metodo Main ** 
 
  **Dicas:** 
 - http://www.oracle.com/technetwork/articles/java/juneau-generics-2255374.html 

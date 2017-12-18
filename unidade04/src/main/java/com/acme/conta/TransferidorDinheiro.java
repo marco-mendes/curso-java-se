@@ -11,8 +11,8 @@ import com.acme.excecoes.MovimentacaoInvalida;
  * @author Marco Mendes
  * @since 2017
  * 
- * Pontos de análise
- *  - Funções estáticas
+ * Pontos de analise
+ *  - Funcoes estaticas
  *  - Construtores privativos
  * 
  */

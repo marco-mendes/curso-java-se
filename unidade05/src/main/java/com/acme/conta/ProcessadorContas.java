@@ -12,8 +12,8 @@ import com.acme.excecoes.MovimentacaoInvalida;
  * @author Marco Mendes
  * @since 2017
  * 
- * Pontos de análise:
- * - Uso de tipos genéricos (Generics)
+ * Pontos de analise:
+ * - Uso de tipos genericos (Generics)
  * 
  */
 public class ProcessadorContas<T extends IConta> {

@@ -20,17 +20,17 @@ import com.acme.excecoes.MovimentacaoInvalida;
  * @author Marco Mendes
  * @since 2017
  * 
- *        Pontos para análise 
+ *        Pontos para analise 
  *        - Uso do super 
  *        - Sobrescrita (override) 
  *        - Sobrecarga (overload) 
  *        - Composicao de objetos 
- *        - Reuso por delegação 
- *        - Reuso por herança
- *        - Programacao por contrato (ou funciona ou retorna uma exceção) 
+ *        - Reuso por delegacao 
+ *        - Reuso por heranca
+ *        - Programacao por contrato (ou funciona ou retorna uma excecao) 
  *        - For Each
  *        - Constantes
- *        - Demonstraçao do uso do Hashmap (redução da complexidade de O(N) para O(1))
+ *        - Demonstracao do uso do Hashmap (reducao da complexidade de O(N) para O(1))
  * 
  */
 public class ClienteVIP extends Cliente {
@@ -46,7 +46,7 @@ public class ClienteVIP extends Cliente {
 		contas.put(numeroConta, new ContaCorrente(numeroConta, 0, 5000.0));
 	}
 
-	// Overload - Sobrecarga do método construtor (nao confundir com override!)
+	// Overload - Sobrecarga do mï¿½todo construtor (nao confundir com override!)
 	public ClienteVIP(String nome, String endereco, String numeroConta, double saldo) throws ContaInvalida {
 		super(nome, endereco);
 		contas = new HashMap<String, IConta>();

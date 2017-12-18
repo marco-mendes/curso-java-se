@@ -4,10 +4,8 @@
 package com.acme.agencia;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import com.acme.cliente.Cliente;
-import com.acme.cliente.ClienteRegular;
 
 /**
  * @author Marco Mendes

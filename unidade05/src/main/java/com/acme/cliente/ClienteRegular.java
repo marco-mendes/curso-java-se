@@ -9,19 +9,6 @@ import com.acme.excecoes.LimiteChequeEspecialExcedido;
 import com.acme.excecoes.LimiteSaqueExcedido;
 import com.acme.excecoes.MovimentacaoInvalida;
 
-/**
- * @author Marco Mendes
- * @since 2017
- * 
- * Pontos para análise
- * - Uso do super
- * - Sobrescrita (override)
- * - Sobrecarga (overload)
- * - Composicao de objetos
- * - Reuso por delegação
- * - Programacao por contrato (ou funciona ou retorna uma exceção)
- * 
- */
 public class ClienteRegular extends Cliente {
 
     private ContaCorrente conta; 
@@ -31,7 +18,7 @@ public class ClienteRegular extends Cliente {
 		conta  = new ContaCorrente(numeroConta, 0.0, 0.0);
 	}
 	
-	// Overload - Sobrecarga do método construtor (nao confundir com override!)
+	// Overload - Sobrecarga do metodo construtor (nao confundir com override!)
 	public ClienteRegular(String nome, String endereco, String numeroConta, double saldo) throws ContaInvalida {
 		super(nome, endereco);
 		conta  = new ContaCorrente(numeroConta,saldo, 0.0);
@@ -44,11 +31,11 @@ public class ClienteRegular extends Cliente {
 	}
 	
 	public void creditar(double valor) throws MovimentacaoInvalida {
-		conta.creditar(valor); // Reuso por delegação
+		conta.creditar(valor); // Reuso por delegaï¿½ï¿½o
 	}
 	
 	public void debitar(double valor) throws MovimentacaoInvalida, LimiteSaqueExcedido, LimiteChequeEspecialExcedido {
-		conta.debitar(valor); // Reuso por delegação
+		conta.debitar(valor); // Reuso por delegaï¿½ï¿½o
 	}
 	
 	public double getSaldo() {
