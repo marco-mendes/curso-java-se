@@ -4,6 +4,7 @@
 package com.acme.agencia;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import com.acme.cliente.Cliente;
 
@@ -43,5 +44,8 @@ public class Agencia<T extends Cliente>  {
 		return montante;
 	}
 
+    public static void main(String[] args) {
+		
+	}
 
 }

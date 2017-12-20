@@ -7,14 +7,14 @@ import com.acme.excecoes.LimiteSaqueExcedido;
 import com.acme.excecoes.MovimentacaoInvalida;
 
 /**
- * Classe conta corrente com construções básica em Java
+ * Classe conta corrente com construï¿½ï¿½es bï¿½sica em Java
  * 
  * @author Marco Mendes
  * @since 2017
  * 
- *        Pontos para análise: 
- *        - Uso de enums - Uso de exceções para tratamento de  erros 
- *        - Fatoração de regras em métodos privativos
+ *        Pontos para analise: 
+ *        - Uso de enums - Uso de excecoes para tratamento de  erros 
+ *        - Fatoracao de regras em metodos privativos
  *        - Interfaces fluentes (String Buffer)
  * 
  */

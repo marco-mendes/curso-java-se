@@ -6,3 +6,5 @@ Codigo base para uso: amostra.unidade05
 - Crie rotinas de ordenacao dos clientes da agencia por
    -> Nome do cliente, criterio alfabetico
    -> Saldo do cliente (somando todas as suas contas)
+   
+ Collections.sort

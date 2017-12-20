@@ -4,6 +4,8 @@
 package com.acme.agencia;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import com.acme.cliente.Cliente;
 
 /**
@@ -12,7 +14,7 @@ import com.acme.cliente.Cliente;
  */
 public class Agencia<T extends Cliente> {
 
-	private ArrayList<T> clientes;
+	private List<T> clientes;
 	private String nome;
 	
 	

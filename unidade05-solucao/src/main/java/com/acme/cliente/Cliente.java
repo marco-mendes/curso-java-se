@@ -1,5 +1,7 @@
 package com.acme.cliente;
 
+import com.acme.agencia.Agencia;
+
 /**
  * Classe cliente com construcoes minimas em Java
  * @author Marco Mendes
@@ -44,14 +46,24 @@ public abstract class Cliente implements Comparable<Cliente>  {
 	
 	public abstract double getSaldo();
 	
+	private int estrategia = 1;
+	public void setEstrategia(int estrategia) {
+		this.estrategia = estrategia;
+	}
 	
 	public int compareTo(Cliente outroCliente) {
-		return this.getNome().compareTo(outroCliente.getNome());
+		if (estrategia ==1) {
+		   return this.getNome().compareTo(outroCliente.getNome());
+		} 
+		
+		return (Double.compare(this.getSaldo(), outroCliente.getSaldo()));
+		
 	}
 
 	@Override
 	public String toString() {
 		return "Nome:" + this.getNome() + System.lineSeparator() + "Endereco:" + this.getEndereco();
 	}
+	
 	
 }
