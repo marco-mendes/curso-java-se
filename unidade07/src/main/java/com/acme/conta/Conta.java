@@ -98,6 +98,7 @@ public abstract class Conta {
 		}
 	}
 	
+	// Open Closed (SOLID)
 	public void geraExtrato(EstrategiaImpressao estrategia) {
         estrategia.imprimir(this);
 	}

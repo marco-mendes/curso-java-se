@@ -1,6 +1,10 @@
 Pontos para estudo nesta unidade: 
-- Métodos Default (Defender Methods) - Classe EstrategiaImpressao
-- Interface funcional (@FunctionalInterface) - Interface ProcessadorContas
-- Expressões Lambda  - Classe Agencia
-
+  - Lambda
+  - Streams 
+  - Parallel Streams
+  - Java Optionals
+  - Codigos nos pacotes: exemplos.java.streams (olhar o numero)
+  
+Artigo conceitual - Collection Pipeline
+https://martinfowler.com/articles/collection-pipeline/    
 

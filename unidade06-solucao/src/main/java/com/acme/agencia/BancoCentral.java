@@ -40,8 +40,10 @@ public class BancoCentral {
 	public void registraMovimentacaoBancoCentral(String conta, double valor,
 			TipoMovimentacao tipoMovimentacao) {
 		if (valor >= BancoCentral.LIMITE_MINIMO_MONITORACAO_BC) {
+            // Value Object
 			RegistroTransacoesVO registro = 
 					new RegistroTransacoesVO("001", conta, tipoMovimentacao, valor);
+			
 			adicionaMovimentacao(registro);
 		}
 	}

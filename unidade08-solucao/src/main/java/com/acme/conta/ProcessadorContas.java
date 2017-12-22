@@ -12,5 +12,10 @@ import com.acme.excecoes.MovimentacaoInvalida;
  */
 @FunctionalInterface
 public interface ProcessadorContas {
+	
+	default void soma() {
+		int a = 1;
+	}
+	
 	public void processaConta(Conta conta) throws MovimentacaoInvalida, LimiteSaqueExcedido, LimiteChequeEspecialExcedido;    
 }

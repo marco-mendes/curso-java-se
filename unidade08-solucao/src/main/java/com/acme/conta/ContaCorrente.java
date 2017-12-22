@@ -72,7 +72,7 @@ public class ContaCorrente extends Conta {
 		ContaCorrente contaMaria = new ContaCorrente("12346-7", 0, 2000);
 		
 		contaJoao.geraExtrato(FabricaEstrategiaImpressao.criaEstrategiaImpressao(2));
-
+        // Funcao lambda 
 		ProcessadorContas tarifador = (Conta conta) -> conta.debitar(10);				
 		tarifador.processaConta(contaJoao);
 	
