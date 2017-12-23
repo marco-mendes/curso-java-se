@@ -3,6 +3,7 @@ package com.acme.cliente;
 import java.util.function.Function;
 
 import com.acme.agencia.Agencia;
+import com.acme.conta.Conta;
 
 /**
  * Classe cliente com construcoes minimas em Java
@@ -40,7 +41,6 @@ public abstract class Cliente implements Comparable<Cliente>  {
 	}
 	
 	public abstract double getSaldo();
-	
 	
 	public int compareTo(Cliente outroCliente) {
 		return this.getNome().compareTo(outroCliente.getNome());

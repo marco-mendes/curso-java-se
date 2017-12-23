@@ -1,5 +1,7 @@
 package com.acme.conta;
 
+import java.util.function.Predicate;
+
 import com.acme.excecoes.ContaInvalida;
 import com.acme.excecoes.LimiteChequeEspecialExcedido;
 import com.acme.excecoes.LimiteSaqueExcedido;
@@ -25,6 +27,8 @@ public class ContaCorrente extends Conta {
         super(codigo, saldo);
 		this.limiteCredito = limiteCredito;
 	}
+	
+
 
 	public double getLimiteCredito() {
 		return limiteCredito;

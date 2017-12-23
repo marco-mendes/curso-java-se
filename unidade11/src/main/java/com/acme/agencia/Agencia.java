@@ -6,9 +6,11 @@ package com.acme.agencia;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.function.Function;
 
 import com.acme.cliente.Cliente;
 import com.acme.cliente.ClienteVIP;
+import com.acme.conta.Conta;
 import com.acme.excecoes.ContaInexistente;
 import com.acme.excecoes.ContaInvalida;
 import com.acme.excecoes.LimiteChequeEspecialExcedido;
@@ -56,15 +58,11 @@ public class Agencia<T extends Cliente> {
 	public void adicionaCliente(T cliente) {
 		clientes.add(cliente);
 	}
-
-	public double totalizadorMontanteFinanceiro() {
-		double montante = 0;
-		for (T t : clientes) {
-			montante += t.getSaldo();
-		}
-
-		return montante;
-	}
+	
+	public static final Function <Agencia<? extends Cliente>, Double> totalizadorMontanteFinanceiro =
+	 agencia -> agencia.clientes.stream().
+	   mapToDouble(cliente -> cliente.getSaldo()).
+	   reduce(0.0, (a,b) -> a+b); 
 
 	public void ordenaClientesPorNome() {
 		Collections.sort(this.clientes);
@@ -121,6 +119,9 @@ public class Agencia<T extends Cliente> {
 
 		// agenciaVIP.adicionaCliente(manu); Manu nao pode ser adicionada para esta agencia
 
+		System.out.println("Montante da agencia");
+		System.out.println(totalizadorMontanteFinanceiro.apply(agencia001));
+		
 	}
 
 }

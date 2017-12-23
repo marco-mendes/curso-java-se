@@ -6,6 +6,7 @@ package com.acme.conta;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import com.acme.agencia.BancoCentral;
 import com.acme.agencia.TipoMovimentacao;
@@ -30,6 +31,9 @@ public abstract class Conta {
 	private StatusConta status;
 	
 	private List<MovimentacaoVO> listaMovimentacoes;
+	
+	public static final Predicate<Conta> estaNoChequeEspecial = conta -> conta.getSaldo() < 0;  	
+
 
 	public Conta(String codigo, double saldo) throws ContaInvalida {
 		if (!Utils.validaNumeroConta.apply(codigo)) {

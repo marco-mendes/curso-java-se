@@ -87,52 +87,44 @@ public class ClienteVIP extends Cliente {
 		contas.entrySet().stream().forEach(System.out::println);
 	}
 	
-	Function <ClienteVIP, Long> obtemTotalContas =
+	static final  Function <ClienteVIP, Long> obtemTotalContas =
 	    cliente -> cliente.contas.entrySet().stream().count();
 
-		
-    Function <ClienteVIP, Double> obtemSaldoTotalContas =
-	   cliente -> cliente.contas.values().stream().
-	      mapToDouble(Conta::getSaldo).	
-          reduce(0.0, (a, b) -> a + b);
+	static final  Function <ClienteVIP, Double> obtemSaldoTotalContas =
+	    		   cliente -> cliente.contas.values().stream().
+	    		      mapToDouble(Conta::getSaldo).	
+	    	          reduce(0.0, (a, b) -> a + b);
 	    
-	final Comparator<Conta> comparadorSaldo = 
+	static final Comparator<Conta> comparadorSaldo = 
 			(c1, c2) -> Double.compare(c1.getSaldo(), c2.getSaldo());
 	
-	Function <ClienteVIP, Conta> obtemContaMaiorSaldo =
+	static final Function <ClienteVIP, Conta> obtemContaMaiorSaldo =
 		cliente -> cliente.contas.values().stream().
 		   max(comparadorSaldo).get();
 		
-	Function <ClienteVIP, Conta> obtemContaMenorSaldo =
+	static final Function <ClienteVIP, Conta> obtemContaMenorSaldo =
 		cliente -> cliente.contas.values().stream().
 		   min(comparadorSaldo).get();		
 
-	Function <ClienteVIP, Double> obtemSaldoMedioContas =
+	static final Function <ClienteVIP, Double> obtemSaldoMedioContas =
 	    	cliente -> cliente.contas.values().stream().
 	    	   mapToDouble(Conta::getSaldo).	
 	    	   average().getAsDouble();
 	
-	Predicate<Conta> estaNoChequeEspecial = conta -> conta.getSaldo() < 0;  	
 	    	
-	Function <ClienteVIP, List<Conta>> obtemContasNoChequeEspecial = 
+	static final Function <ClienteVIP, List<Conta>> obtemContasNoChequeEspecial = 
 		cliente -> cliente.contas.values().stream().
-			filter(estaNoChequeEspecial).
+			filter(Conta.estaNoChequeEspecial).
 			collect(Collectors.toList());
 
 
-	Function <ClienteVIP, DoubleSummaryStatistics> obtemEstatisticaSaldoContas = 
+	static final Function <ClienteVIP, DoubleSummaryStatistics> obtemEstatisticaSaldoContas = 
 		cliente -> cliente.contas.values().stream().
-			 collect(Collectors.summarizingDouble(conta -> conta.getSaldo()));
-						
-	
+			 collect(Collectors.summarizingDouble(conta -> conta.getSaldo()));			
+
 	public double getSaldo() {
-		double montante=0;
-		for (Conta conta:contas.values()) {
-			montante += conta.getSaldo();
-		}
-		return montante;
+			return this.obtemSaldoTotalContas.apply(this).doubleValue();
 	}
-	
 
 	public static void main(String[] args)
 			throws MovimentacaoInvalida, LimiteSaqueExcedido, LimiteChequeEspecialExcedido, 
@@ -151,6 +143,9 @@ public class ClienteVIP extends Cliente {
 		joao.creditar("12345-6", 1300);
 		joao.debitar("12345-6", 600);
 		System.out.println(joao);
+		
+		
+		
 
 		ClienteVIP maria = new ClienteVIP(agencia001, "Maria", "Rua das Flores", "53321-6", 500);
 		maria.debitar("53321-6", 400);
