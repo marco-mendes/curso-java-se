@@ -50,23 +50,17 @@ public class Agencia<T extends Cliente> {
 		return montante;
 	}
 
-	public String getCodigoBanco() {
-		return "001";
-	}
-	
 	public void ordenaClientesPorNome() {
 		Collections.sort(this.clientes);
 	}
+	
+	public String getCodigoBanco() {
+		return "001";
+	}
 	 
 	public void ordenaClientesPorSaldo() {
-		/* Java SE 7 Collections.sort(this.clientes, new ComparatorSaldo()); */
-
-		// Java SE 8 - Uso de expressões Lambda 
-		Comparator<Cliente> porSaldo =
-					(Cliente c1, Cliente c2)->Double.compare(c1.getSaldo(), c2.getSaldo());	
-		
-		// Java SE 8 - Uso de método Sort na Interface List			
-		clientes.sort(porSaldo);	
+		// Sort utiliza o padrao de desenho GoT Strategy, i.e, podemos variar dinamicamente a estrategia de ordenacao
+		Collections.sort(this.clientes, new ComparatorSaldo());
 	}
 	
 	public String toString() {
@@ -81,26 +75,26 @@ public class Agencia<T extends Cliente> {
 			throws MovimentacaoInvalida, LimiteSaqueExcedido, LimiteChequeEspecialExcedido, 
 			       ContaInvalida, ContaInexistente {
 
-		ClienteVIP joao = new ClienteVIP("Joao", "Rua das Couves", "12345-6");
+		Agencia<ClienteVIP> agencia001 = new Agencia<>("001");
+		
+		ClienteVIP joao = new ClienteVIP(agencia001, "Joao", "Rua das Couves", "12345-6");
 		joao.creditar("12345-6", 1300);
 		joao.debitar("12345-6", 600);
 
-		ClienteVIP maria = new ClienteVIP("Maria", "Rua das Flores", "54321-6", 500);
+		ClienteVIP maria = new ClienteVIP(agencia001, "Maria", "Rua das Flores", "54321-6", 500);
 		maria.adiconarNovaConta("34567-6", 1000);
 		maria.debitar("54321-6", 400);
 		maria.debitar("34567-6", 3000);
 		
-		ClienteVIP manu = new ClienteVIP("Manu", "Rua da Manu", "56789-6", 500);
+		ClienteVIP manu = new ClienteVIP(agencia001, "Manu", "Rua da Manu", "56789-6", 500);
 		manu.creditar("56789-6", 10000);
 				
 		
-		Agencia<ClienteVIP> agenciaVIP = new Agencia<ClienteVIP>("Agencia 001");
-		agenciaVIP.adicionaCliente(joao);
-		agenciaVIP.adicionaCliente(maria);
-		agenciaVIP.adicionaCliente(manu);
-		agenciaVIP.ordenaClientesPorSaldo();
+		agencia001.adicionaCliente(joao);
+		agencia001.adicionaCliente(maria);
+		agencia001.adicionaCliente(manu);
 		
-		System.out.println(agenciaVIP);
+		System.out.println(agencia001);
 		
 
 		// agenciaVIP.adicionaCliente(manu); Manu nao pode ser adicionada para esta agencia
@@ -109,7 +103,6 @@ public class Agencia<T extends Cliente> {
 
 }
 
-/** Código Java SE 7 - Removido para o uso de expressões lambda
 class ComparatorSaldo implements Comparator<Cliente> {
 
 	public int compare(Cliente cliente1, Cliente cliente2) {
@@ -117,4 +110,3 @@ class ComparatorSaldo implements Comparator<Cliente> {
 	}
 
 }
-*/

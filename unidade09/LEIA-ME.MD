@@ -1,5 +1,2 @@
-Pontos para estudo nesta unidade: 
-- forEach para manipulação de listas (Classe ClienteVIP)
-- Streams (Classe ClienteVIP). Uso dos métodos map e reduce
-
-
+Pontos para estudo nesta unidade
+ - Interfaces fluentes (Classe Agencia, ClienteVIP)

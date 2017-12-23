@@ -1,10 +1,6 @@
-Pontos para estudo nesta unidade: 
-  - Lambda
-  - Streams 
-  - Parallel Streams
-  - Java Optionals
-  - Codigos nos pacotes: exemplos.java.streams (olhar o numero)
-  
-Artigo conceitual - Collection Pipeline
-https://martinfowler.com/articles/collection-pipeline/    
+Pontos para estudo nesta unidade
+ - Expressões lambda (ProcessadorConta)
+ - Composição de funções (Cliente,ClienteVIP)
+ 
+ - Pacote: java.util.function
 

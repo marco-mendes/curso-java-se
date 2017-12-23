@@ -25,11 +25,4 @@ public class EstrategiaImpressaoTela implements EstrategiaImpressao {
 	    System.out.println(sb.toString());
 	}
 
-	/* (non-Javadoc)
-	 * @see com.acme.conta.EstrategiaImpressao#geraExtratoParaImpressao(com.acme.conta.Conta)
-	 */
-	public StringBuilder geraExtratoParaImpressao(Conta conta) {
-		return null;
-	}
-
 }
