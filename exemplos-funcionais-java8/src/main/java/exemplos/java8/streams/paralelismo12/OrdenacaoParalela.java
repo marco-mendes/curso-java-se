@@ -33,7 +33,7 @@ public class OrdenacaoParalela {
 	            s, Thread.currentThread().getName());
 	        return s.toUpperCase();
 	    })
-	    .forEach(s -> System.out.format("Processamento paralelo: %s [%s]\n",
+	    .forEachOrdered(s -> System.out.format("Processamento paralelo: %s [%s]\n",
 	        s, Thread.currentThread().getName()));
 
 		// Comportamento da ordenação
@@ -42,6 +42,7 @@ public class OrdenacaoParalela {
 		// appropriate Arrays.sort method.
 		// Arrays.sort() ou Arrays.parallelSort() 
 
-          
+  		
+		
 	}
 }

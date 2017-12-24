@@ -9,9 +9,11 @@ import java.util.Optional;
  * @author Marco Mendes
  * @since 2017
  */
-public class ComJava8 {
+public class OptionalsAloMundo {
     public static void main(String[] args) {
 
+    	// Optional é um tipo de Monad
+    	// https://en.wikipedia.org/wiki/Monad_%28functional_programming%29#History
     	//  'Optional' vazio;
     	// Antes do Java 8 usariamos null como argumento
     	Optional<String> vazio = Optional.empty();
