@@ -17,7 +17,7 @@ public abstract class Cliente implements Comparable<Cliente>  {
 	private String endereco;
 	private Agencia<Cliente> agencia;
 	
-	public Cliente(Agencia agencia, String nome, String endereco) {
+	public Cliente(Agencia<Cliente> agencia, String nome, String endereco) {
 		super();
 		this.agencia = agencia;
 		this.nome = nome;
@@ -46,15 +46,15 @@ public abstract class Cliente implements Comparable<Cliente>  {
 		return this.getNome().compareTo(outroCliente.getNome());
 	}
 	
-	public Agencia getAgencia() {
+	public Agencia<Cliente> getAgencia() {
 		return agencia;
 	}
 	
 	// f(x)
-	public static Function <Cliente, Agencia> obtemAgencia = Cliente::getAgencia; 
+	public static Function <Cliente, Agencia<? extends Cliente>> obtemAgencia = Cliente::getAgencia; 
     
 	// g(x)
-	public static Function<Agencia, String> obtemCodigoBancoAgencia = Agencia::getCodigoBanco;	
+	public static Function<Agencia<? extends Cliente>, String> obtemCodigoBancoAgencia = Agencia::getCodigoBanco;	
 	
 	// Funcao composta g(f(x)
     public static Function<Cliente, String> obtemBancoCliente = obtemAgencia.andThen(obtemCodigoBancoAgencia);

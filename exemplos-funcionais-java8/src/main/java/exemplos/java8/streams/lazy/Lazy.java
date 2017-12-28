@@ -23,6 +23,7 @@ public class Lazy {
 				map(sampleMap).
 				sorted();
 		System.out.println(randomStream); 
+
 		// Veja que a impressao acima aparece antes das operacao do mapa
 		// map é uma operacao Lazy (somente usada quando necessário)
 		randomStream.forEach(System.out::println);

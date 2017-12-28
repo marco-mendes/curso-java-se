@@ -33,14 +33,14 @@ public class ClienteVIP extends Cliente {
 	 */
 	private HashMap<String, Conta> contas;
 
-	public ClienteVIP(Agencia<ClienteVIP> agencia, String nome, String endereco, String numeroConta) throws ContaInvalida {
+	public ClienteVIP(Agencia<Cliente> agencia, String nome, String endereco, String numeroConta) throws ContaInvalida {
 		super(agencia, nome, endereco);
 		contas = new HashMap<>();
 		contas.put(numeroConta, new ContaCorrente(numeroConta, 0, 5000.0));
 	}
 
 	// Overload - Sobrecarga do metodo construtor (nao confundir com override!)
-	public ClienteVIP(Agencia<ClienteVIP> agencia, String nome, String endereco, String numeroConta, double saldo) throws ContaInvalida {
+	public ClienteVIP(Agencia<Cliente> agencia, String nome, String endereco, String numeroConta, double saldo) throws ContaInvalida {
 		super(agencia, nome, endereco);
 		contas = new HashMap<>();
 		contas.put(numeroConta, new ContaCorrente(numeroConta, saldo, 5000.0));
@@ -131,8 +131,8 @@ public class ClienteVIP extends Cliente {
 			       ContaInvalida, ContaInexistente {
 
 		// Uso de interface fluente
-		Agencia<ClienteVIP> agencia001 = 
-				new Agencia<ClienteVIP>().
+		Agencia<Cliente> agencia001 = 
+				new Agencia<Cliente>().
 				nome("Agencia Central").
 				endereco("Praça Sete de Setembro").
 				cep("30000").

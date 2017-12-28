@@ -90,8 +90,8 @@ public class Agencia<T extends Cliente> {
 			       ContaInvalida, ContaInexistente {
 
 		// Uso do padrão interface fluente
-		Agencia<ClienteVIP> agencia001 = 
-				new Agencia<ClienteVIP>().
+		Agencia<Cliente> agencia001 = 
+				new Agencia<Cliente>().
 				nome("001").
 				endereco("Praça Sete de Setembro").
 				cep("30000").

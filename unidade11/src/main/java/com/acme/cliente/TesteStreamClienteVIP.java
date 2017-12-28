@@ -18,8 +18,8 @@ public class TesteStreamClienteVIP {
 	public static void main(String[] args) {
 		// Uso de interface fluente
 		try {
-			Agencia<ClienteVIP> agencia001 = 
-					new Agencia<ClienteVIP>().
+			Agencia<Cliente> agencia001 = 
+					new Agencia<Cliente>().
 					nome("Agencia Central").
 					endereco("Praça Sete de Setembro").
 					cep("30000").
@@ -47,7 +47,6 @@ public class TesteStreamClienteVIP {
 			System.out.println(ClienteVIP.obtemSaldoTotalContas.apply(maria));
 			System.out.println("\nContas no cheque especial");
 			System.out.println(ClienteVIP.obtemContasNoChequeEspecial.apply(maria));
-		
 		
 		
 		} catch (ContaInvalida e) {
