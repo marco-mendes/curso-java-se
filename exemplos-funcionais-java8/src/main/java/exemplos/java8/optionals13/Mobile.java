@@ -13,11 +13,12 @@ public class Mobile {
 	private String name;
 	private Optional<DisplayFeatures> displayFeatures;
 
-	public Mobile(long id, String brand, String name, Optional<DisplayFeatures> displayFeatures){
+	public Mobile(long id, String brand, String name, 
+			DisplayFeatures displayFeatures){
 		this.id = id;
 		this.brand = brand;
 		this.name = name;
-		this.displayFeatures = displayFeatures;
+		this.displayFeatures = Optional.ofNullable(displayFeatures);
 	}
 
 	public long getId() {

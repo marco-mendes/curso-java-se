@@ -54,10 +54,12 @@ public abstract class Cliente implements Comparable<Cliente>  {
 	public static Function <Cliente, Agencia> obtemAgencia = Cliente::getAgencia; 
     
 	// g(x)
-	public static Function<Agencia, String> obtemCodigoBancoAgencia = Agencia::getCodigoBanco;	
+	public static Function<Agencia, String> obtemCodigoBancoAgencia = 
+			Agencia::getCodigoBanco;	
 	
 	// Funcao composta g(f(x)
-    public static Function<Cliente, String> obtemBancoCliente = obtemAgencia.andThen(obtemCodigoBancoAgencia);
+    public static Function<Cliente, String> 
+        obtemBancoCliente = obtemAgencia.andThen(obtemCodigoBancoAgencia);
 
 	@Override
 	public String toString() {

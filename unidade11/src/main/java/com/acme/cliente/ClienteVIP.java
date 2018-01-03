@@ -3,6 +3,7 @@
  */
 package com.acme.cliente;
 
+import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.DoubleSummaryStatistics;
 import java.util.HashMap;
@@ -81,6 +82,7 @@ public class ClienteVIP extends Cliente {
 		contas.put(codigo, new ContaCorrente(codigo, saldo, 5000.0));
 	}
 	
+
 	// Métodos para exemplificar o uso de streams
 	
 	public void imprimirContas() {
@@ -90,6 +92,7 @@ public class ClienteVIP extends Cliente {
 	static final  Function <ClienteVIP, Long> obtemTotalContas =
 	    cliente -> cliente.contas.entrySet().stream().count();
 
+	// Map - Reduce    
 	static final  Function <ClienteVIP, Double> obtemSaldoTotalContas =
 	    		   cliente -> cliente.contas.values().stream().
 	    		      mapToDouble(Conta::getSaldo).	

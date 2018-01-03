@@ -32,7 +32,8 @@ public abstract class Conta {
 	
 	private List<MovimentacaoVO> listaMovimentacoes;
 	
-	public static final Predicate<Conta> estaNoChequeEspecial = conta -> conta.getSaldo() < 0;  	
+	public static final Predicate<Conta> estaNoChequeEspecial = 
+			conta -> conta.getSaldo() < 0;  	
 
 
 	public Conta(String codigo, double saldo) throws ContaInvalida {
