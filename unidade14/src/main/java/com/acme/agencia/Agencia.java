@@ -33,9 +33,9 @@ public class Agencia<T extends Cliente> {
 	private String cep;
 	private String telefone;
 
-
 	public Agencia() {
 		clientes = new ArrayList<>();
+		
 	}
 
 	public String getNome() {

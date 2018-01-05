@@ -24,7 +24,8 @@ public class ContaCorrente extends Conta {
 	private double limiteCredito;
 
 	public ContaCorrente(String codigo, double saldo, double limiteCredito) throws ContaInvalida {		
-        super(codigo, saldo);
+    
+	super(codigo, saldo);
 		this.limiteCredito = limiteCredito;
 	}
 	

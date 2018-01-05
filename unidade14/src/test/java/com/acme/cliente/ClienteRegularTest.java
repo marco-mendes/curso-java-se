@@ -73,11 +73,15 @@ class ClienteRegularTest {
 	@DisplayName("Criacao de cliente com conta invalida.") 
 	void testeDebitoIrregular() throws ContaInvalida {
 		
-	    Throwable exception = assertThrows(ContaInvalida.class, () -> {
-			maria = new ClienteRegular(agencia001, 
-					"Maria", "Rua das Flores", Optional.of("Rua das Flores Comercial"), 
-					"54321-65", dataNascimentoMaria, 100);
-	    });
+	    Throwable exception = 
+	    		assertThrows(ContaInvalida.class, 
+	    			() -> {
+					        maria = new ClienteRegular(agencia001, 
+							"Maria", "Rua das Flores", Optional.of("Rua das Flores Comercial"), 
+							"54321-65", dataNascimentoMaria, 100);
+	    				  }
+	    	
+	    	);
 	    assertEquals("Conta Invalida", exception.getMessage());
 	}
 	 
@@ -87,7 +91,7 @@ class ClienteRegularTest {
 	    assertThrows(ContaInvalida.class, () -> {
 			maria = new ClienteRegular(agencia001, 
 					"Maria", "Rua das Flores", Optional.of("Rua das Flores Comercial"), 
-					"54321-65", dataNascimentoMaria, 100);
+					"54321-36", dataNascimentoMaria, 100);
 	    });
 	}
 	

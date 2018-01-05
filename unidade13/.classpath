@@ -42,9 +42,9 @@
 	<classpathentry kind="lib" path="lib/org.junit.platform.runner_1.0.0.v20170910-2246.jar"/>
 	<classpathentry kind="lib" path="lib/org.junit.platform.suite.api_1.0.0.v20170910-2246.jar"/>
 	<classpathentry kind="lib" path="lib/org.junit.vintage.engine_4.12.0.v20170910-2246.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="lib/org.hamcrest.core_1.3.0.v201303031735.jar"/>
 	<classpathentry kind="lib" path="lib/org.apiguardian_1.0.0.v20170910-2246.jar"/>
 	<classpathentry kind="lib" path="lib/org.opentest4j_1.0.0.v20170910-2246.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

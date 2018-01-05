@@ -22,8 +22,6 @@ import com.acme.excecoes.LimiteChequeEspecialExcedido;
 import com.acme.excecoes.LimiteSaqueExcedido;
 import com.acme.excecoes.MovimentacaoInvalida;
 
-import junit.framework.Assert;
-
 @RunWith(JUnitPlatform.class)
 class ClienteRegularTest {
 

@@ -65,8 +65,8 @@ class ClienteRegularTest {
 	@Test
 	@DisplayName("Teste de debito regular") 
 	void testDebitarRegular() throws MovimentacaoInvalida, LimiteSaqueExcedido, LimiteChequeEspecialExcedido {
-		maria.debitar(400);		
-		assertEquals(100, maria.getSaldo());
+		maria.debitar(50);		
+		assertEquals(450, maria.getSaldo());
 	}
 	
 	@Test
